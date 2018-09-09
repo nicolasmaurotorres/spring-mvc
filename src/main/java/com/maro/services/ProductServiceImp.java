@@ -21,7 +21,7 @@ public class ProductServiceImp implements ProductService {
 	}
 	
 	@Override
-	public List<Product> listAllProducts() {
+	public List<Product> listAll() {
 		return new ArrayList<>(products.values());
 	}
 	
@@ -54,12 +54,12 @@ public class ProductServiceImp implements ProductService {
 	}
 
 	@Override
-	public Product getProductById(Integer id) {
+	public Product getById(Integer id) {
 		return this.products.get(id);
 	}
 
 	@Override
-	public Product saveOrUpdateProduct(Product product) {
+	public Product saveOrUpdate(Product product) {
 		if (product != null) {
 			if (product.getId() == null) {
 				product.setId(getNextKey());
@@ -76,7 +76,7 @@ public class ProductServiceImp implements ProductService {
 	}
 
 	@Override
-	public void deteleProduct(Integer id) {
+	public void delete(Integer id) {
 		products.remove(id);
 	}
 	
